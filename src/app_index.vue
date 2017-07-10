@@ -1,1 +1,6 @@
-app_index.vue
+<template>
+  <div>
+    <router-view>
+    </router-view>
+  </div>
+</template>
