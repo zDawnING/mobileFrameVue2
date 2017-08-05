@@ -1,0 +1,214 @@
+/**
+ * 生成激活颜色
+ * @param  {[type]} @color [description]
+ * @return {[type]}        [description]
+ */
+.active-color-mixin(@color){
+	@color-active:lighten(@color,10%);
+}
+/**
+ * 生成颜色按钮
+ * @param  {[type]} @color        [description]
+ * @return {[type]}               [description]
+ */
+.btn-color-mixin (@color){
+	.active-color-mixin(@color);
+
+    background-color: @color;
+
+    border-color: @color;
+    color: white;	
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.active{
+	    background-color: @color-active;
+	    border-color: @color-active;
+	    color: white;		
+	} 
+	&.btn-outline{
+
+		color: @color;	
+
+		&:hover,
+		&:focus,
+		&:active,
+		&.active{
+			
+			background-color: @color;
+		    color: white;
+
+		}		
+	} 
+	&.btn-shadow{
+		box-shadow: 1px 1px 5px @color-active;
+		-webkit-box-shadow: 1px 1px 5px @color-active;
+	}  
+}
+/**
+ * 生成每种颜色的按钮
+ * @param  {Number} @counter) when          (@counter < [description]
+ * @return {[type]}           [description]
+ */
+.create-btn-mixin(@counter) when (@counter <= 9 ) {
+	@var :"color-@{counter}";
+	.btn-@{counter}{
+		.btn-color-mixin(@@var);
+	}	
+	.create-btn-mixin(( @counter + 1 ));// 递归调用自身
+}
+/**
+ * 生成对应颜色class
+ * @param  {Number} @counter) when          (@counter < [description]
+ * @return {[type]}           [description]
+ */
+.create-color-mixin(@counter) when (@counter <= 9 ) {
+	@var :"color-@{counter}";	
+	.color-@{counter}{
+		color:@@var
+	}
+	.create-color-mixin(( @counter + 1 ));// 递归调用自身
+}
+/**
+ * 生成对应背景颜色
+ * @param  {Number} @counter) when          (@counter < [description]
+ * @return {[type]}           [description]
+ */
+.create-bg-mixin(@counter) when (@counter <= 9 ) {
+	@var :"color-@{counter}";	
+	.bg-@{counter}{
+		background:@@var
+	}
+	.create-bg-mixin(( @counter + 1 ));// 递归调用自身
+}
+/**
+ * 生产对应边框颜色
+ * @param  {Number} @counter) when          (@counter < [description]
+ * @return {[type]}           [description]
+ */
+.create-bcolor-mixin(@counter) when (@counter <= 9 ) {
+	@var :"color-@{counter}";	
+	.bcolor-@{counter}{
+		border-color:@@var
+	}
+	.bcolor-left-@{counter}{
+		border-left-color:@@var
+	}
+	.bcolor-right-@{counter}{
+		border-right-color:@@var
+	}		
+	.bcolor-top-@{counter}{
+		border-top-color:@@var
+	}	
+	.bcolor-bottom-@{counter}{
+		border-bottom-color:@@var
+	}	
+	.create-bcolor-mixin(( @counter + 1 ));// 递归调用自身
+}
+/**
+ * 生成对应字体
+ * @param  {Number} @counter) when          (@counter < [description]
+ * @return {[type]}           [description]
+ */
+.create-font-size-mixin(@counter) when (@counter <= 10 ) {
+	@var :"font-size-@{counter}";	
+	.f-@{counter}{
+		font-size:@@var
+	}
+	.create-font-size-mixin(( @counter + 1 ));// 递归调用自身
+}
+/**
+ * 创建更小的字体
+ * [mixin description]
+ * @param  {[type]} @font_size [description] 对应的效果图字体大小
+ * @return {[type]}                   [description]
+ */
+.create-litter-font-size-mixin(@font_size){
+  @font_size_pre:@font_size/24;
+  @font_size_10_width:100%/@font_size_pre;
+  .inline-block();
+  width: @font_size_10_width;
+  transform-origin: top left;
+  -webkit-transform-origin: top left;
+  transform: scale(@font_size_pre);
+  -webkit-transform: scale(@font_size_pre);
+  text-align: center;
+  margin: 0 auto; 	
+}
+/**
+    .c-modal__dialog--1{
+        transform: translate(0%,-0%);
+    }
+    .c-modal__dialog--2{
+      transform: translate(100%,-100%);
+    }    
+    .c-modal__dialog--3{
+      transform: translate(200%,-200%);
+    }      
+    .c-modal--active-1{
+
+      .c-modal__dialog--1{
+          transform: translate(0%,-0%);
+      }
+      .c-modal__dialog--2{
+        transform: translate(100%,-100%);
+      }       
+      .c-modal__dialog--3{
+        transform: translate(200%,-200%);
+      }   
+
+    }
+    .c-modal--active-2{
+
+      .c-modal__dialog--1{
+          transform: translate(-100%,-0%);
+      }
+      .c-modal__dialog--2{
+        transform: translate(0%,-100%);
+      }   
+      .c-modal__dialog--3{
+        transform: translate(100%,-200%);
+      }            
+    } 
+    .c-modal--active-3{
+
+      .c-modal__dialog--1{
+          transform: translate(-200%,-0%);
+      }
+      .c-modal__dialog--2{
+        transform: translate(-100%,-100%);
+      }   
+      .c-modal__dialog--3{
+        transform: translate(0%,-200%);
+      }            
+    }     
+ */
+.create-queue-modal-init-mixin(@counter) when (@counter >= 1 ){
+	@x:100%*( @counter - 1 );
+	@y:-100%*( @counter - 1 );
+    .c-modal__dialog--@{counter}{
+        transform: translate(@x,@y);
+        -webkit-transform: translate(@x,@y);
+    }
+    .create-queue-modal-init-mixin(( @counter - 1 ));
+}
+.create-queue-modal-active-item-mixin(@activeCounter,@counter) when (@counter >= 1) {
+	@x:100%*( @counter - @activeCounter );
+	@y:100%*( 1 - @counter );
+    .c-modal__dialog--@{counter}{
+        transform: translate(@x,@y);
+        -webkit-transform: translate(@x,@y);
+    }	
+	.create-queue-modal-active-item-mixin(@activeCounter,( @counter - 1 ));
+}
+.create-queue-modal-active-mixin(@activeCounter,@counter ) when (@activeCounter >= 1 ){
+	.c-modal--active-@{activeCounter}{
+		.create-queue-modal-active-item-mixin(@activeCounter,@counter );
+	}
+	.create-queue-modal-active-mixin(( @activeCounter - 1 ),@counter);
+}
+.create-queue-modal-mixin(@counter){
+	.create-queue-modal-init-mixin(@counter);
+	.create-queue-modal-active-mixin(@counter,@counter);
+}

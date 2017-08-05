@@ -1,0 +1,143 @@
+//弹框
+.c-modal {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+ 
+    width: 100%;
+    height: 100%;
+    // overflow-y: auto;
+    // padding-bottom: 30px;
+
+    background: rgba(0,0,0,0.6);
+
+    opacity: 0;
+
+}
+//内容展示弹框样式
+.c-modal--more{
+        
+    .c-modal__content {
+
+        transform: translate3d(0,-100%,0);
+        -webkit-transform: translate3d(0,-100%,0);
+
+    }    
+
+}
+.c-modal--more.c-modal--active{
+
+    .c-modal__content {
+
+        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+
+    }
+
+}
+//询问型
+.c-modal--confirm{
+
+    .c-modal__content {
+
+        transform: scale(0,0);
+        -webkit-transform: scale(0,0);
+
+    }     
+
+}
+.c-modal--confirm.c-modal--active{
+
+    .c-modal__content {
+
+        transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+
+    }
+
+}
+.c-modal--active {
+    
+    z-index: 10000;
+
+    opacity: 1;
+
+
+}
+.c-modal__dialog {
+
+    // display: table;
+
+    overflow-y: auto;
+
+    width: 100%;
+    height: 100%;
+    padding: 30% 72/100rem 72/100rem 72/100rem;
+
+    text-align: center;
+
+    .transition();
+    
+}
+.c-modal__content {
+
+    position: relative;
+    // display: table-cell;
+    
+    width: 100%;
+    // height: 100%;
+    padding: 58/100rem 98/100rem;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+
+    .bg-4();
+
+    .transition();
+
+}
+
+.c-modal__close-btn{
+
+    position: absolute;
+    top: -61/2/100rem;
+    right: -61/2/100rem;
+
+    width: 61/100rem;
+    height: 61/100rem;
+
+}
+.c-modal__footer{
+
+    margin-top: 58/100rem;
+
+}
+.l-two-btn{
+
+    .bfc();
+
+}
+.l-two-btn__item{
+
+    float: left;
+
+    width: 50%;
+
+}
+.l-two-btn__item--left{
+
+    padding-right: 23/100rem;
+
+}
+.l-two-btn__item--right{
+
+    padding-left: 23/100rem;
+
+}

@@ -1,0 +1,179 @@
+@imgbox_effect_picture_width:691;
+@imgbox_poster_relative_width:347;
+@imgbox_poster_relative_height:215;
+@imgbox_blank_height:0.3*441;
+@imgbox_effect_picture_height:(@imgbox_effect_picture_width*@imgbox_poster_relative_height)/@imgbox_poster_relative_width;
+@imgbox_item_height:@imgbox_blank_height+@imgbox_effect_picture_height;
+
+.l-imgbox{
+
+	position: relative;
+
+	height: @imgbox_item_height/100rem;
+
+}
+
+.l-imgbox__bg{
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+
+}
+.c-imgbox__bgdiv{
+
+	overflow: hidden;
+
+	height: @imgbox_effect_picture_height/100rem;
+	width: 100%;
+
+}
+.c-imgbox__bgimg{
+
+	width: 100%;
+	height: auto;
+
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;		
+
+}
+.c-imgbox__blank{
+
+	height: @imgbox_blank_height/100rem;
+
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;			
+
+}
+
+.l-imgbox__btndiv{
+
+	position: absolute;
+	top: 0;
+	right: 5%;
+
+	&.l-imgbox__btndiv--more{
+		right: 23%;
+	}
+
+}
+
+.c-tribtn{
+
+	position: relative;
+
+	width: 100%;
+
+}
+.c-tribtn__bg{
+
+	width: 30/230*691/100rem;
+	height: auto;
+
+}
+.c-tribtn__title{
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 20%;
+
+	width: 100%;
+
+	text-align: center;
+
+
+}
+.l-imgbox__guessdiv{
+
+	position: absolute;
+    top: 4%;
+    left: -8%;	
+
+	width: 200/100rem;
+
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+
+}
+.c-title-mask{
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 8%;
+
+	width: 100%;
+	padding: 30/100rem 60/100rem;
+
+	background: rgba(0,0,0,0.6);
+
+}
+
+.l-imgbox__userdiv{
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 35/100rem;
+
+	width: 100%;
+	height: 150/100rem;
+
+
+}
+.l-imgbox__promulgator{
+
+	position: absolute;
+	left: 57/100rem;
+	top: 0;
+
+	width: 122/100rem;
+
+}
+.l-imgbox__challenger{
+
+	position: absolute;
+	left: 286/100rem;
+	top: 0;
+
+	width: 122/100rem;
+
+}
+.l-imgbox__referee{
+
+	position: absolute;
+	right: 56/100rem;
+	top: 0;
+
+	width: 122/100rem;
+
+}
+
+.l-imgbox__vs{
+
+	position: absolute;
+	left:205/100rem;
+	top: 50/100rem;
+
+	width: 56/100rem;
+
+}
+.l-imgbox__line{
+
+	position: absolute;
+	left: 157/100rem;
+	bottom: 20/100rem;
+
+	height: 1px;
+	width: 144/100rem;
+
+	border-width: 1px;
+	border-style: dotted;
+
+}

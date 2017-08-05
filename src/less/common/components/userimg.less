@@ -1,0 +1,100 @@
+@userimg_circle_width:4;
+@userimg_hw:122;
+.l-userimg__div{
+
+	position: relative;
+
+	width: @userimg_hw/100rem;
+	height: @userimg_hw/100rem;		
+
+}
+
+.l-userimg__up{
+
+	position: absolute;
+	top: -@userimg_circle_width/100rem;
+	left: -@userimg_circle_width/100rem;
+	right: -@userimg_circle_width/100rem;
+
+	height: (@userimg_circle_width+@userimg_hw)/100rem;
+
+}	
+.l-userimg__down{
+
+	position: absolute;
+	left: -@userimg_circle_width/100rem;
+	right: -@userimg_circle_width/100rem;
+	bottom: @userimg_circle_width/100rem;
+
+	height: (@userimg_circle_width+@userimg_hw)/2/100rem;
+
+}
+.c-userimg{
+
+	width: @userimg_hw/100rem;
+
+}
+.c-userimg__img{
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;		
+
+	width: @userimg_hw/100rem;
+	height: @userimg_hw/100rem;
+
+}
+.c-userimg__img--red{
+
+	border:1px solid white;
+	.bcolor-1();
+
+}
+.c-userimg__img--gray{
+
+	border:1px solid white;
+	.bcolor-9();
+
+}
+.c-userimg__label{
+
+	position: relative;
+
+	margin-top: -12/100rem;
+
+	text-align: center;
+
+}
+.c-userimg__title{
+
+	padding: 6/100rem 20/100rem;
+
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+
+}
+@add_height:40/100rem;
+
+.l-item.l-item--higher{
+	height: @add_height+@imgbox_item_height/100rem;
+}
+.l-imgbox
+.l-imgbox--higher{
+	height: @add_height+@imgbox_item_height/100rem;
+}
+.c-imgbox__bgdiv
+.c-imgbox__bgdiv--higher{
+	height: @add_height+@imgbox_effect_picture_height/100rem;
+}
+.c-imgbox__blank
+.c-imgbox__blank--higher{
+	height: @add_height+@imgbox_blank_height/100rem;
+}
+.l-imgbox__userdiv
+.l-imgbox__userdiv--higher{
+
+	bottom: @add_height+35/100rem;
+
+}

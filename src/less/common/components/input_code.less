@@ -1,0 +1,95 @@
+  .c-inputcode{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+ 
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,.6);
+
+    opacity: 0;
+
+    .c-inputcode__body {
+      transform: translate3d(0,100%,0);
+      -webkit-transform: translate3d(0,100%,0);
+    }
+
+  }
+
+  .c-inputcode__body {
+    position: absolute;
+    bottom: 0;
+    
+    width: 100%;
+
+    .transition();
+  }
+
+  .c-inputcode--active {
+    z-index: 10000;
+
+    opacity: 1;
+    .c-inputcode__body {
+      transform: translate3d(0,0,0);
+      -webkit-transform: translate3d(0,0,0);
+    }
+  }
+
+  .c-inputcode__header{
+		position: relative;
+
+		padding: 16/100rem 0;
+
+		text-align: center;
+
+  	border-bottom: 1px solid #eeeeee;
+  }
+
+  .c-inputcode__close-btn{
+  	position: absolute;
+  	left: 20/100rem;
+  	top: 0;
+  }
+
+	.c-inputcode__num-block{
+		padding: 35/100rem 50/100rem;
+	}
+
+	.c-inputcode__num-input{
+		width: 100%;
+
+		td{
+      width: 25%;
+      height: 100/100rem;
+
+      text-align: center;
+
+      border: 1px solid #eeeeee;
+		}
+	}
+
+  .c-inputcode__keyboard{
+    width: 100%;
+    
+		td{
+      width: 33.33%;
+      height: 116/100rem;
+
+      text-align: center;
+		}
+
+    .c-inputcode__num-btn{
+      border: 1px solid #eeeeee;
+
+      &:active{
+      	.bg-1();
+      	font{
+      		.color-4();
+      	}
+      }
+    }
+  }

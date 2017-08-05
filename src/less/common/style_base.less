@@ -1,0 +1,55 @@
+//颜色
+.create-color-mixin(1);
+
+//背景颜色
+.create-bg-mixin(1);
+
+//边框颜色
+.create-bcolor-mixin(1);
+
+//字体
+.create-font-size-mixin(1);
+.f-6{
+  .f-5();
+  .create-litter-font-size-mixin(22);
+}
+.f-7{
+  .f-5();
+  .create-litter-font-size-mixin(20);
+}
+
+//下面定义公共样式
+//字体默认颜色
+font{
+	.color-5();
+	.f-3();
+}
+//input输入提示颜色
+::-webkit-input-placeholder { /* WebKit browsers */
+    .color-8();
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ 	.color-8();  
+ 	opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   .color-8();
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   .color-8();
+}
+.transition {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+}
+.c-mobiscroll-input{
+
+  padding: 0;
+
+  outline: none;
+  border:none;
+  
+}

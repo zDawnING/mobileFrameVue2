@@ -1,0 +1,137 @@
+.bfc {
+    overflow: hidden;
+    zoom: 1;
+}
+.bfc_x {
+    overflow-x: hidden;
+    zoom: 1;
+}
+.bfc_y {
+    overflow-y: hidden;
+    zoom: 1;
+}
+.none-touch{
+    position:relative;
+    overflow: hidden;
+    height: 100%;
+}
+.block {
+    display: block;
+}
+.inline-block {
+    display: inline-block;
+}
+.bsie8 {
+    box-sizing: border-box;
+}
+/*还原textarea的展示方式*/
+.text-div {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.mlrauto {
+    margin-left: auto;
+    margin-right: auto;
+}
+.bg100_ {
+    background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+}
+.bnone {
+    border: none;
+    outline: none;
+}
+/*省略*/
+.pddd {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*给所有要点击的div添加点击效果*/
+.active-click {
+    &:active,
+    &:hover{
+        background: rgb(243,243,243);
+    }
+}
+/*上传div*/
+.upload-div {
+    position: relative;
+    cursor: pointer;
+    input[type='file'] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+.to-click {
+    cursor: pointer;
+}
+.copy-input {
+    opacity: 0;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: default;
+}
+[v-cloak] {
+    display: none;
+}
+/* FontAwesome */
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('FontAwesome.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+.fa {
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font: normal normal normal 0.14rem/1 FontAwesome;
+    line-height: inherit;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa-spinner:before {
+    content: "\f110";
+}
+.fa-spin {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+.fa.fa-spinner.fa-spin{
+    height: .364rem !important;
+    width: .3rem !important;
+}
+/* FontAwesome end */
